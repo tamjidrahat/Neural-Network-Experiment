@@ -34,11 +34,11 @@ model.fit(data,labels,n_epoch=10,batch_size=16,show_metric=True)
 
 
 # Let's create some data for DiCaprio and Winslet
-dicaprio = [3, 'Jack Dawson', 'male', 19, 0, 0, 'N/A', 5.0000]
-winslet = [1, 'Rose DeWitt Bukater', 'female', 17, 1, 2, 'N/A', 100.0000]
+dicaprio = [3, 'Tamjid', 'male', 19, 0, 0, 'N/A', 5.0000]
+winslet = [1, 'Rahat', 'male', 17, 1, 2, 'N/A', 100.0000]
 # Preprocess data
 dicaprio, winslet = data_preprocess([dicaprio, winslet], col_to_ignore)
 
 pred = model.predict([dicaprio, winslet])
-print("DiCaprio Surviving Rate:", str(np.argmax(pred[0])))
-print("Winslet Surviving Rate:", str(np.argmax(pred[1])))
+print("Tamjid Surviving Rate:", str(np.argmax(pred[0])))
+print("Rahat Surviving Rate:", str(np.argmax(pred[1])))
