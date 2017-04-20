@@ -45,9 +45,12 @@ net = fully_connected(net,17,activation='softmax')
 net = regression(net,optimizer='momentum', loss='categorical_crossentropy', learning_rate=0.001)
 
 
-model = tflearn.DNN(net,tensorboard_verbose=2,checkpoint_path='./checkpoints/oxflowers17',max_checkpoints=1)
-model.fit(X,Y,n_epoch=1000,validation_set=0.1,show_metric=True,batch_size=64,shuffle=True,snapshot_epoch=False
-          ,snapshot_step=200,run_id='oxflowers17_alexnet')
+model = tflearn.DNN(net,tensorboard_verbose=2,checkpoint_path='./checkpoints/oxflowers17/oxflowers17.tf1',max_checkpoints=1)
 
-model.save('./checkpoints/oxflowers17/oxflowers17.tf1')
+model.load('./checkpoints/oxflowers17/oxflowers17.tf1-40')
+
+model.fit(X,Y,n_epoch=1000,validation_set=0.1,show_metric=True,batch_size=64,shuffle=True,snapshot_epoch=False
+          ,snapshot_step=50,run_id='oxflowers17_alexnet')
+
+
 
