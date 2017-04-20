@@ -84,17 +84,17 @@ net = regression(net,optimizer='adam',loss='categorical_crossentropy',learning_r
 model = tflearn.DNN(net)
 
 #now train the model
-model.fit(X_train,Y_train,n_epoch=50, validation_set=(X_test,Y_test),show_metric=True, batch_size=96,run_id='svhn')
+#model.fit(X_train,Y_train,n_epoch=20, validation_set=(X_test,Y_test),show_metric=True, batch_size=96,run_id='svhn')
 
 #save the progress
-model.save('./checkcpoints/svhn/svhn_cnn')
+#model.save('svhn_cnn')
 
-print "SVHN network is complete! trained model is saved as svhn_cnn"
+#print "SVHN network is complete! trained model is saved as svhn_cnn"
 
-'''
+
 #load the trained model
-#model.load('./checkcpoints/svhn/svhn_cnn')
-
+model.load('./checkpoints/svhn/svhn_cnn.tf1')
+print "trained model is loaded"
 correct = 0.
 total_testset = len(X_test)
 
@@ -105,4 +105,4 @@ for i in range(total_testset):
         correct += 1
 
 print 'accuracy: '+str(correct/total_testset)
-'''
+#accuracy: 0.901236939152

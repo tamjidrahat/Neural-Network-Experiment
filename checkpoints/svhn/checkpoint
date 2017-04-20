@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/tamjid/PycharmProjects/DNNProject/svhn_cnn"
+all_model_checkpoint_paths: "/home/tamjid/PycharmProjects/DNNProject/svhn_cnn"

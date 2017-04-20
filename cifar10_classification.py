@@ -69,3 +69,4 @@ for i in range(total_testset):
         correct += 1
 
 print 'accuracy: '+str(correct/total_testset)
+#accuracy: 0.8124
